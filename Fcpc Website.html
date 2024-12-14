@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fathalla Coding & Programming Contest - FCPC</title>
+    <style>
+        /* إعدادات الخطوط والألوان */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(to bottom, #e9ecef, #f8f9fa); /* خلفية ناعمة بتدرج */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(to right, #6c63ff, #48cae4); /* تدرج لوني جميل */
+            text-align: center;
+            padding: 20px;
+            font-size: 2.8rem;
+            color: #fff;
+            font-weight: 700;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* ظل أسفل الهيدر */
+        }
+
+        .countdown-container {
+            margin-top: 30px;
+            text-align: center;
+            background: #fff;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .intro-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 30px 0;
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro-text h1 {
+            font-size: 2.5rem;
+            color: #6c63ff;
+            margin-bottom: 15px;
+        }
+
+        .intro-text p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .apply-now {
+            font-size: 1.4rem;
+            color: #fff;
+            background: linear-gradient(to right, #48cae4, #6c63ff);
+            padding: 12px 28px;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-top: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .apply-now:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-container {
+            margin: 30px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .image-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 800px;
+            margin-top: 40px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        iframe {
+            width: 100%;
+            height: 1321px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        /* تأثير التمرير الناعم */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* زر الأسفل ثابت */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #6c63ff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            background: #48cae4;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        Fathalla Coding & Programming Contest (FCPC)
+    </header>
+
+    <div class="content">
+        <div class="intro-text">
+            <h1>Welcome to the FCPC</h1>
+            <p>The FCPC is a competitive programming event organized for the students of Fathalla International School of Applied Technology. The contest is designed to enhance programming skills and problem-solving abilities, focusing on C++. Participants will tackle a series of algorithmic challenges that test their logic, coding speed, and efficiency under time constraints.</p>
+            <p>Winners will receive prizes, certificates, and recognition for their exceptional skills in programming.</p>
+	    <p><strong>Note:</strong> The form will close on <strong>December 20th at 12:00 AM (midnight)</strong>. Make sure to apply before the deadline!</p>
+<p><strong>Time Remaining:</strong> 	    <div class="countdown-container" id="countdown-container">
+            <span id="countdown">Loading...</span>
+        </div></p>
+
+
+            <div class="apply-now" onclick="document.getElementById('apply-form').scrollIntoView({ behavior: 'smooth' })">
+                Apply Now
+            </div>
+        </div>
+
+        <!-- عرض العد التنازلي أسفل النص التقديمي -->
+  
+
+        <!-- عرض الصورة بعد التمرير -->
+        <div class="image-container" id="image-container">
+            <img src="CODING COMPETITION - Made with PosterMyWall (1).jpg" alt="Coding Contest">
+        </div>
+
+        <!-- نموذج التسجيل -->
+        <div id="apply-form" class="form-container">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScU3zuBsUVL7vbO78ZJITJ2WL6s0rHPdyhXBHPlK_Q6rTk_eg/viewform?embedded=true"></iframe>
+        </div>
+    </div>
+
+    <!-- زر العودة للأعلى -->
+    <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        ↑ Back to Top
+    </div>
+
+    <script>
+        // عد تنازلي إلى 20/12 الساعة 12:00 صباحًا
+        const countdownElement = document.getElementById('countdown');
+        const eventDate = new Date('2024-12-20T23:59:59');
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = eventDate - now;
+
+            if (diff <= 0) {
+                countdownElement.textContent = 'The event has started!';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // إظهار الصورة عند التمرير
+        const imageContainer = document.getElementById('image-container');
+        window.addEventListener('scroll', () => {
+            const rect = imageContainer.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                imageContainer.classList.add('visible');
+            }
+        });
+    </script>
+</body>
+
+</html>
